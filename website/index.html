@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>IoT Sensor Dashboard</h1>
+    <p class="subtitle">Real-time Monitoring & Control</p>
+  </header>
+
+  <main class="dashboard">
+    <section class="card sensor-card" id="temperature-card">
+      <h2>Temperature</h2>
+      <div class="value" id="temp-value">-- °C</div>
+      <div class="trend" id="temp-trend">--</div>
+    </section>
+
+    <section class="card sensor-card" id="humidity-card">
+      <h2>Humidity</h2>
+      <div class="value" id="hum-value">-- %</div>
+      <div class="trend" id="hum-trend">--</div>
+    </section>
+
+    <section class="card control-card">
+      <h2>Device Control</h2>
+      <button class="btn" id="toggle-led">Toggle LED</button>
+      <div class="status" id="led-status">LED is OFF</div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2025 IoT Solutions Inc.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

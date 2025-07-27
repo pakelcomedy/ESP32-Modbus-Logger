@@ -1,0 +1,14 @@
+[build]
+target = "xtensa-esp32-espidf"
+
+[unstable]
+build-std = ["std", "panic_abort"]
+
+[target.xtensa-esp32-espidf]
+runner = "espflash flash --monitor"
+rustflags = [
+  "-C", "link-arg=-Tlinkall.x",
+]
+
+[env]
+ESP_IDF_VERSION = "v5.1"  # Atur sesuai versi toolchain esp-idf kamu

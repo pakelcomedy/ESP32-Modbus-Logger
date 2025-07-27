@@ -1,0 +1,121 @@
+/* style.css - Modern IoT Dashboard Theme */
+
+:root {
+  --primary-color: #00bfa5;
+  --secondary-color: #263238;
+  --bg-color: #12181b;
+  --card-bg: #1e2729;
+  --text-color: #eceff1;
+  --accent-color: #ffca28;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: var(--secondary-color);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.app-header .subtitle {
+  font-size: 1rem;
+  color: #90a4ae;
+  margin-top: 0.25rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  flex: 1;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sensor-card h2,
+.control-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.trend {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #90a4ae;
+}
+
+.control-card .btn {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.control-card .btn:hover {
+  background: #008e76;
+}
+
+.control-card .status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.app-footer {
+  background: var(--secondary-color);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #607d8b;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 600px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  .dashboard {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

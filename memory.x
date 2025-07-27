@@ -1,0 +1,11 @@
+/* memory.x - default ESP32 memory layout for Rust */
+
+MEMORY
+{
+  IROM (rx) : ORIGIN = 0x400D0018, LENGTH = 0x00100000
+  IRAM (rw) : ORIGIN = 0x40080000, LENGTH = 0x00020000
+  DRAM (rw) : ORIGIN = 0x3FFB0000, LENGTH = 0x00050000
+  RTCFAST (rw) : ORIGIN = 0x50000000, LENGTH = 0x00008000
+}
+
+_stack_start = ORIGIN(DRAM) + LENGTH(DRAM);

@@ -1,0 +1,34 @@
+[package]
+name = "esp32-modbus-logger"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+esp-idf-hal = "0.42.1"
+esp-idf-sys = { version = "0.34", features = ["binstart"] }
+esp-idf-svc = "0.47.3"
+embedded-svc = "0.25.3"
+log = "0.4"
+heapless = "0.7"
+nb = "1.1.0"
+embedded-hal = "1.0.0"
+modbus      = "0.6"
+serialport = "4.0"    # for RTU support
+anyhow      = "1.0"
+
+# (Optional) For file logging or JSON config parsing
+embedded-sdmmc = "0.6"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# (Optional) SMTP client
+lettre = { version = "0.11", default-features = false, features = ["smtp-transport", "builder", "serde"] }
+
+[build-dependencies]
+embuild = "0.31.4"
+
+[features]
+default = ["std"]
+std = ["esp-idf-sys/std", "esp-idf-svc/std"]
